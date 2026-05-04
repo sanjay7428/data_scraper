@@ -81,10 +81,10 @@ class CompanyQueryRequest(BaseModel):
     query: str = Field(..., description="Search query, e.g. remote SaaS companies")
     max_results: int = Field(100, ge=50, le=200, description="Maximum companies in the response")
     max_search_results: int = Field(
-        20,
+        40,
         ge=10,
-        le=20,
-        description="Number of SerpAPI organic results to inspect",
+        le=200,
+        description="Number of SerpAPI organic results to inspect (supports pagination)",
     )
 
 
